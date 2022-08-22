@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo;
 
+import java.util.Objects;
+
 public class PositionType {
 
     private int id;
@@ -14,6 +16,25 @@ public class PositionType {
     public PositionType(String value) {
         this();
         this.value = value;
+    }
+// "The Position Class" GA2 task 2
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PositionType that = (PositionType) o;
+        return id == that.id && Objects.equals(value, that.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, value);
+    }
+//"The PositionType Class GA2 task .1
+
+    @Override
+    public String toString() {
+        return value;
     }
 
     // TODO: Add a custom toString() method that returns the data stored in 'value'.
