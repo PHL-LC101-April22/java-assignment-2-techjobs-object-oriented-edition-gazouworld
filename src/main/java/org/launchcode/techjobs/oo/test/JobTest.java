@@ -10,3 +10,14 @@ import org.junit.runners.JUnit4;
 public class JobTest {
 
 }
+
+public void Job(){
+}
+
+public void Job(){
+}
+
+//@Test
+//public void testSettingJobId() {
+//   assertNotEquals(ID, ID);
+//}
