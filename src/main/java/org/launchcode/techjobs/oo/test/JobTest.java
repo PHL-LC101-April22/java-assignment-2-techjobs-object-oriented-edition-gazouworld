@@ -27,11 +27,10 @@ public class JobTest {
     public void testJobConstructorSetsAllFields() {
         Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertTrue(job2.getName() instanceof String);
-        assertTrue(job2.getEmployer() instanceof int);
-        assertTrue(job2.getLocation() instanceof int);
-        assertTrue(job2.getPositionType() instanceof int);
-        assertTrue(job2.getCoreCompetency() instanceof int);
-        //assertTrue(expectedKey instanceof Key);
+        assertTrue(job2.getEmployer() instanceof Employer);
+        assertTrue(job2.getLocation() instanceof Location);
+        assertTrue(job2.getPositionType() instanceof PositionType);
+        assertTrue(job2.getCoreCompetency() instanceof CoreCompetency);
         assertEquals(job2.getName(), "Product tester");
         assertEquals(job2.getEmployer(), "ACME");
         assertEquals(job2.getLocation(), "Desert");
