@@ -4,6 +4,10 @@ import java.util.Objects;
 
 public class Job {
 
+    // change this to:?? double check
+    // public class Job extends JobField {
+    //public Job(String value) {super(value);}
+
     private int id;
     private static int nextId = 1;
 
@@ -85,7 +89,48 @@ public class Job {
         this.coreCompetency = coreCompetency;
 
    }
+   @Override
+    public String toString() {
+       String output = "\n";
 
+
+       // add this for The final test of TDD to string
+       //String output = "\nID: " + this.getID() + "\n"'
+       //if (this.name == null || this.name.equals("")){
+       //output += "None: Data not available\n";
+       //}else{
+       //  }
+       //if (this.employer == null || this.employer.getValue().equals("")){
+       //output += "Employer: Data not available\n";
+       //}else{
+       //}
+       //if (this.location == null || this.location.getValue().equals("")){
+       //output += "location: Data not available\n";
+       //}else{
+       //}
+       //if (this.positionType == null || this.positionType.getValue().equals("")){
+       //output += "positionType: Data not available\n";
+       //}else{
+       //}
+       //if (this.coreCompetency == null || this.coreCompetency.getValue().equals("")){
+       //output += "coreCompetency: Data not available\n";
+       //}else{
+       //}
+
+
+
+       output += 'Name: ' + this.name + '\n';
+       output += "ID: " + getId() + "\n";
+        output += "Name: " + getName() + "\n";
+        output += "Employer: " + getEmployer().getValue() + "\n";
+       output += "Location: " + getLocation().getValue() + "\n";
+       output += "Position Type: " + getPositionType().getValue() + "\n";
+       output += "Core Competency: " + getCoreCompetency().getValue();
+
+        output += "\n";
+        return output;
+
+   }
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize

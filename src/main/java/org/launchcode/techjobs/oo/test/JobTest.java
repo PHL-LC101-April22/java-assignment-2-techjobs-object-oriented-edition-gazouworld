@@ -32,15 +32,62 @@ public class JobTest {
         assertTrue(job2.getPositionType() instanceof PositionType);
         assertTrue(job2.getCoreCompetency() instanceof CoreCompetency);
         assertEquals(job2.getName(), "Product tester");
-        assertEquals(job2.getEmployer(), "ACME");
-        assertEquals(job2.getLocation(), "Desert");
-        assertEquals(job2.getPositionType(), "Quality control");
-        assertEquals(job2.getCoreCompetency(), "Persistence");
-
-
-        }
+        assertEquals(job2.getEmployer().getValue(), "ACME");
+        assertEquals(job2.getLocation().getValue(), "Desert");
+        assertEquals(job2.getPositionType().getValue(), "Quality control");
+        assertEquals(job2.getCoreCompetency().getValue(), "Persistence");
 
     }
+@Test
+
+   public void testJobsForEquality(){
+    Job job3 = new Job("TA", new Employer("LaunchCode"), new Location("Philadelphia"), new PositionType("Teachers Assistant"),new CoreCompetency("Awesome"));
+    Job job4 = new Job("TA", new Employer("LaunchCode"), new Location("Philadelphia"), new PositionType("Teachers Assistant"), new CoreCompetency("Awesome"));
+
+    assertFalse(job3.equals(job4));
+
+
+
+//    assertNotEquals(job, job1);
+
+}
+    @Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        Job job5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String job = job5.toString();
+        assertEquals(job.charAt(0), '\n');
+        assertEquals(job.charAt(job.length()-1), '\n');
+
+    }
+    @Test
+    public void testToStringContainsCorrectLabelsAndData(){
+        Job job5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String job = job5.toString();
+        String expected = "\nID: " + job5.getId() + "\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n";
+       assertEquals(job, expected);
+
+
+    }
+    @Test
+    public void testToStringHandlesEmptyField(){
+        Job emptyJob = new Job();
+        emptyJob.setName("Bingo player");// change this!!!!
+        assertEquals("\n" +
+                "ID: " + emptyJob.getId() + '\n' +
+                "Name: Bingo player\n" +
+                "Employer: Data not available\n" +
+                "Location: Data not available\n" +
+                "Position Type: Data not available\n" +
+                "Core Competency: Data not available" +
+                "\n", emptyJob.toString());
+
+    }
+
+
+}
+
+
+
 
 
 

@@ -4,6 +4,10 @@ import java.util.Objects;
 
 public class CoreCompetency {
 
+    // change this to:
+    // public class coreCompetency extends JobField {
+    //public coreCompetency(String value) {super(value);}
+
     private int id;
     private static int nextId = 1;
     private String value;
