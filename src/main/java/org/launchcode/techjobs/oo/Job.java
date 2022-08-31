@@ -91,41 +91,39 @@ public class Job {
    }
    @Override
     public String toString() {
-       String output = "\n";
 
 
-       // add this for The final test of TDD to string
-       //String output = "\nID: " + this.getID() + "\n"'
-       //if (this.name == null || this.name.equals("")){
-       //output += "None: Data not available\n";
-       //}else{
-       //  }
-       //if (this.employer == null || this.employer.getValue().equals("")){
-       //output += "Employer: Data not available\n";
-       //}else{
-       //}
-       //if (this.location == null || this.location.getValue().equals("")){
-       //output += "location: Data not available\n";
-       //}else{
-       //}
-       //if (this.positionType == null || this.positionType.getValue().equals("")){
-       //output += "positionType: Data not available\n";
-       //}else{
-       //}
-       //if (this.coreCompetency == null || this.coreCompetency.getValue().equals("")){
-       //output += "coreCompetency: Data not available\n";
-       //}else{
-       //}
+       String output = "\nID: " + this.getId() + "\n";
+       if (this.name == null || this.name.equals("")){
+       output += "Name: Data not available\n";
+       }else{
+           output += "Name: " + this.name + '\n';
+       }
+
+       if (this.employer == null || this.employer.getValue().equals("")){
+       output += "Employer: Data not available\n";
+       }else{
+           output += "Employer: " + getEmployer().getValue() + "\n";
+       }
+       if (this.location == null || this.location.getValue().equals("")){
+       output += "Location: Data not available\n";
+       }else{
+           output += "Location: " + getLocation().getValue() + "\n";
+       }
+       if (this.positionType == null || this.positionType.getValue().equals("")){
+       output += "Position Type: Data not available\n";
+       }else{
+           output += "Position Type: " + getPositionType().getValue() + "\n";
+       }
+       if (this.coreCompetency == null || this.coreCompetency.getValue().equals("")){
+       output += "Core Competency: Data not available";
+       }else{
+           output += "Core Competency: " + getCoreCompetency().getValue();
+
+       }
 
 
 
-       output += 'Name: ' + this.name + '\n';
-       output += "ID: " + getId() + "\n";
-        output += "Name: " + getName() + "\n";
-        output += "Employer: " + getEmployer().getValue() + "\n";
-       output += "Location: " + getLocation().getValue() + "\n";
-       output += "Position Type: " + getPositionType().getValue() + "\n";
-       output += "Core Competency: " + getCoreCompetency().getValue();
 
         output += "\n";
         return output;

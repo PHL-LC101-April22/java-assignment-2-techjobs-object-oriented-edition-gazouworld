@@ -71,10 +71,10 @@ public class JobTest {
     @Test
     public void testToStringHandlesEmptyField(){
         Job emptyJob = new Job();
-        emptyJob.setName("Bingo player");// change this!!!!
+        emptyJob.setName("IceCream tester");
         assertEquals("\n" +
                 "ID: " + emptyJob.getId() + '\n' +
-                "Name: Bingo player\n" +
+                "Name: IceCream tester\n" +
                 "Employer: Data not available\n" +
                 "Location: Data not available\n" +
                 "Position Type: Data not available\n" +
